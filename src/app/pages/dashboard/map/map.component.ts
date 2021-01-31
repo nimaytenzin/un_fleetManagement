@@ -1,25 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-import { UpgradableComponent } from 'theme/components/upgradable';
 import * as L from 'leaflet';
-export class drivers
-{
-  public name: string;
-  public lat  : number;
-  public long : number;
-  public contact_number:number;
-  public status:string;
-  public vehicle: string;
-  public vehicle_number
-}
 
 @Component({
-  selector: 'app-dashboard-2',
-  styleUrls: ['./dashboard2.component.scss'],
-  templateUrl: './dashboard2.component.html',
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.scss']
 })
-export class Dashboard2Component extends UpgradableComponent implements OnInit {
-  
+export class MapComponent implements OnInit {
   public drivers =[
     {
       name:"Nima Yoezer",
@@ -53,10 +40,9 @@ export class Dashboard2Component extends UpgradableComponent implements OnInit {
     }
 
   ]
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(this.drivers)
-
     var greenIcon = new L.Icon({
       iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -90,49 +76,17 @@ export class Dashboard2Component extends UpgradableComponent implements OnInit {
       console.log(); 
       var marker = L.marker([this.drivers[i].lat, this.drivers[i].long], {icon: getIcon(this.drivers[i].status_short)}).addTo(mymap);
       marker.bindPopup(`
-      <table style="width:100%">
-      <tr>
-        <th>Driver</th>
-        <th>Vehicle</th>
-        <th>Vehicle Number</th>
-        <th>Status</th>
-        <th>Contact</th>
-      </tr>
-      <tr>
-        <td>${this.drivers[i].name}</td>
-        <td>${this.drivers[i].vehicle}</td>
-        <td>${this.drivers[i].vehicle_number}</td>
-        <td>${this.drivers[i].status}</td>
-        <td>${this.drivers[i].contact_number}</td>
-      </tr>
-      
-    </table>
 
+      <p style="padding:0;margin:0">Driver : ${this.drivers[i].name}</p>
+      <p  style="padding:0;margin:0">Vehicle Number : ${this.drivers[i].vehicle_number}</p>
+      <p  style="padding:0;margin:0">Status : ${this.drivers[i].status}</p>
+      <p  style="padding:0;margin:0">Contact Number :${this.drivers[i].contact_number}</p>
       `);
     }
 
 
-
-    // var legend = L.control({position: 'topright'});
-    // legend.onAdd = function (map) {
-
-    // var div = L.DomUtil.create('div', 'info legend');
-    // var labels = ['<strong>Click on the Markers to View more information</strong>'];
-    // var categories = ['pickup requests are also displayed on the map'];
-
-    // for (var i = 0; i < categories.length; i++) {
-
-    //         div.innerHTML += 
-    //         labels.push(
-    //             '<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
-    //         (categories[i] ? categories[i] : '+'));
-
-    //     }
-    //     div.innerHTML = labels.join('<br>');
-    // return div;
-    // };
-    // legend.addTo(mymap);
- 
-
   }
+
+  
+
 }

@@ -1,0 +1,63 @@
+<h4>Incoming Requests</h4>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" #target>
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric" *ngFor="let item of tableHeader">{{ item }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of data">
+        <td class="mdl-data-table__cell--non-numeric">{{ request.user }}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{ request.contact }}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{ request.location }}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{ request.time }}</td>
+        <td  class="mdl-data-table__cell--non-numeric">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-teal"  (click)="showDialog()" >
+                Assign Driver
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<dialog id="dialog" class="mdl-dialog">
+   <p class="text-color--dark">
+      These are the avialable drivers at the moment.please choose one to assign
+    </p>
+  <div class="mdl-dialog__content">
+    <table style="width:100%"  class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric"></th>
+        <th  class="mdl-data-table__cell--non-numeric">Driver</th>
+        <th class="mdl-data-table__cell--non-numeric">Vehicle</th>
+        <th class="mdl-data-table__cell--non-numeric">Vehicle Number</th>
+        <th class="mdl-data-table__cell--non-numeric">Status</th>
+        <th class="mdl-data-table__cell--non-numeric">Contact</th>
+
+      </tr>
+      <tr *ngFor = "let driver of drivers">
+        <td  class="mdl-data-table__cell--non-numeric"><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"></td>
+        <td  class="mdl-data-table__cell--non-numeric">{{driver.name}}</td>
+        <td  class="mdl-data-table__cell--non-numeric">{{driver.vehicle}}</td>
+        <td  class="mdl-data-table__cell--non-numeric">{{driver.vehicle_number}}</td>
+        <td  class="mdl-data-table__cell--non-numeric">{{driver.status}}</td>
+        <td  class="mdl-data-table__cell--non-numeric">{{driver.contact_number}}</td>
+
+
+      </tr>
+      
+    </table>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue"  (click)="closeDialog()">
+      Assign Driver
+    </button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-light-blue"  (click)="closeDialog()">
+      Close
+    </button>
+    
+  </div>
+</dialog>
+  

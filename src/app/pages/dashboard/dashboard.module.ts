@@ -13,6 +13,8 @@ import { TableCardComponent } from './table-card';
 import { TodoListComponent } from './todo-list';
 import { TrendingComponent } from './trending';
 import { WeatherComponent } from './weather';
+import { MapComponent } from './map/map.component';
+import { RequestsComponent } from './requests/requests.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { WeatherComponent } from './weather';
     RobotCardComponent,
     TodoListComponent,
     TrendingComponent,
+    MapComponent,
+    RequestsComponent,
   ],
   exports: [
     WeatherComponent,

@@ -91,7 +91,8 @@
   },
   "defaultProject": "material-angular-dashboard",
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "analytics": false
   },
   "schematics": {
     "@schematics/angular:component": {

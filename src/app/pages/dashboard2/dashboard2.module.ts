@@ -9,7 +9,6 @@ import { ChartsModule } from '../charts/charts.module';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { MapsModule } from '../maps/maps.module';
 import { Dashboard2Component } from './dashboard2.component';
-import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   imports: [
@@ -22,8 +21,7 @@ import { FiltersComponent } from './filters/filters.component';
     MaterialAngularSelectModule,
   ],
   declarations: [
-    Dashboard2Component,
-    FiltersComponent,
+    Dashboard2Component
   ],
 })
 export class Dashboard2Module {}

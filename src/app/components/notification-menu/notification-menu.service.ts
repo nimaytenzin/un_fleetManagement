@@ -4,27 +4,31 @@ import { Injectable } from '@angular/core';
 export class NotificationMenuService {
   public getNotifications(): object[] {
     return [
-      {
-        text: 'You have 3 new orders.',
-        time: 'just now',
-        icon: 'plus_one',
-        color: 'primary',
-      }, {
-        text: 'Database error',
-        time: '1 min',
-        icon: 'error_outline',
-        color: 'secondary',
-      }, {
-        text: 'The Death Star is built!',
-        time: '2 hours',
-        icon: 'new_releases',
-        color: 'primary',
-      }, {
-        text: 'You have 4 new mails.',
-        time: '5 days',
-        icon: 'mail_outline',
-        color: 'primary',
-      },
-    ];
+        
+        {
+          user: 'Pema Lhadron',
+          contact: '17465532',
+          location: 'UNDP head Office',
+          time:'12:00 AM 1/02/2020'
+        },
+        {
+          user: 'Shara Pradhan',
+          contact: '17465234',
+          location: 'UNICEF Guest House',
+          time:'12:00 AM 1/02/2020'
+        },
+        {
+          user: 'Dawa Dem',
+          contact: '17465532',
+          location: 'Clock Tower',
+          time:'12:00 AM 1/02/2020'
+        },
+        {
+          user: 'Tenzin Nima',
+          contact: '17465533',
+          location: 'Ramada Hotel',
+          time:'12:00 AM 1/02/2020'
+        }
+    ]
   }
 }

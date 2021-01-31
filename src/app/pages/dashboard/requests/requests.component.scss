@@ -1,0 +1,107 @@
+@import '~theme/helpers';
+
+:host {
+  thead th {
+    color: rgba($color-white, 0.9);
+  }
+
+  tbody {
+    td:nth-child(1) {
+      width: 1px;
+    }
+
+    td:nth-child(2) {
+      width: 300px;
+    }
+
+    td:nth-child(3) {
+      width: 240px;
+    }
+
+    td:nth-child(4) {
+      width: 300px;
+    }
+
+    td:nth-child(5) {
+      width: 200px;
+    }
+
+    td:nth-child(6) {
+      width: 300px;
+
+      .mdl-progress {
+        cursor: pointer;
+        min-width: 80px;
+        max-width: 200px;
+      }
+    }
+
+    .task-done {
+      padding-top: 6px !important;
+      padding-bottom: 0 !important;
+      color: $progress-main-color;
+
+      .material-icons,
+      span {
+        color: $color-white;
+        cursor: pointer;
+      }
+
+      .material-icons {
+        background: $color-red;
+        border-radius: 24px;
+        font-size: 16px;
+        padding: 2px;
+        margin-right: 4px;
+      }
+
+      span {
+        vertical-align: text-bottom;
+      }
+    }
+  }
+
+  @media screen and (max-width: 848px) {
+    .dashboard .mdl-cell.mdl-cell--12-col-desktop.mdl-cell--12-col-tablet.mdl-cell--4-col-phone {
+      display: none;
+    }
+  }
+}
+
+
+.mdl-dialog {
+    border: none;
+    box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2);
+    width: fit-content; 
+    border-radius: 5px;
+}
+    .mdl-dialog__title {
+      margin: 0;
+      font-size: 2.5rem; }
+    .mdl-dialog__actions {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row-reverse;
+          -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      .mdl-dialog__actions > * {
+        height: 36px; }
+        .mdl-dialog__actions > *:first-child {
+          margin-right: 0; }
+      .mdl-dialog__actions--full-width {
+        padding: 0 0 8px 0; }
+        .mdl-dialog__actions--full-width > * {
+          height: 48px;
+          -webkit-flex: 0 0 100%;
+              -ms-flex: 0 0 100%;
+                  flex: 0 0 100%;
+          padding-right: 16px;
+          margin-right: 0;
+          text-align: right; }
+    .mdl-dialog__content {
+        margin: 0;
+      color: rgba(0,0,0, 0.54); }

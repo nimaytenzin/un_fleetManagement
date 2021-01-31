@@ -16,4 +16,6 @@ export class NotificationMenuComponent {
   constructor(notificationMenuService: NotificationMenuService) {
     this.notifications = notificationMenuService.getNotifications();
   }
+
+  
 }

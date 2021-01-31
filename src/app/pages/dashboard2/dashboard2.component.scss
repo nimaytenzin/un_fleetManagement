@@ -1,14 +1,8 @@
 :host {
-  app-map-advanced {
-    margin: 0 !important;
-
-    &.map-advanced {
-      min-height: 500px;
-
-      .map__window {
-        height: 500px;
-      }
-    }
+  #map{
+    height: 90vh;
+    width: 100%;
+}
   }
 
   /*
@@ -20,4 +14,4 @@
     }
   }
    */
-}
+
